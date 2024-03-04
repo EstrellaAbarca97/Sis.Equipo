@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreLoved</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Agatha+Neo&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <style>
+        /* Estilos CSS básicos para mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .degradado-fondo {
+            background-image: linear-gradient(to right, #e6c2ea 29%, #92d5e2 75%);
+        }
+        header {
+            background-image: url('img/fondo-cab.jpg'); /* Añadimos la imagen de fondo */
+            background-size: contain; /* Ajustamos el tamaño de la imagen para que se contenga dentro del encabezado */
+            background-position: center;
+            color: #000000;
+            padding: 10px;
+            display: flex; /* Usamos flexbox para alinear los elementos */
+            justify-content: space-between; /* Los elementos se distribuyen uniformemente */
+            align-items: center; /* Los elementos se alinean verticalmente */
+        }
+        nav {
+            order: 1; /* Cambiamos el orden del nav para que esté antes del h1 */
+        }
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s ease; /* Añadimos una transición suave para el color de fondo */
+        }
+        nav a:hover {
+            text-decoration: underline;
+            background-color: #cfa88c; /* Cambiamos el color de fondo al pasar el mouse */
+        }
+        .titulo {
+            text-align: center; /* Centramos el título */
+            display: flex; /* Usamos flexbox para alinear los elementos */
+            align-items: center; /* Los elementos se alinean verticalmente */
+        }
+        .titulo img {
+            margin-right: 10px; /* Ajustamos el margen derecho del icono */
+            height: 80px; /* Ajustamos la altura del icono */
+        }
+        .contenido {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 20px; /* Agregamos un poco de espacio alrededor del contenido */
+        }
+        .texto {
+            flex: 1; /* Hacemos que la sección de texto ocupe todo el espacio disponible */
+            text-align: justify; /* Justificamos el texto */
+            margin-bottom: 20px; /* Agregamos un margen inferior */
+        }
+        .texto p {
+            font-size: 1.2em; /* Tamaño de fuente más grande para el texto */
+            text-align: justify; /* Justificamos el texto */
+        }
+        .imagen-pequeña {
+            max-width: 200px; /* Limitamos el ancho máximo de la imagen */
+            height: auto; /* Permitimos que la altura se ajuste automáticamente */
+        }
+        .carrusel {
+            max-width: 600px; /* Ajustamos el ancho máximo del carrusel */
+            margin-top: 20px; /* Agregamos espacio arriba del carrusel */
+        }
+        .carrusel img {
+            width: 100%; /* Hacemos que las imágenes del carrusel ocupen todo el ancho disponible */
+            border-radius: 5px; /* Agregamos bordes redondeados a las imágenes */
+        }
+        .landscape {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .landscape-content {
+            max-width: 800px;
+            text-align: justify;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        iframe {
+            width: 100%;
+            height: 300px; /* Ajusta la altura del mapa según tus necesidades */
+        }
+        .contacto {
+            margin-top: 20px;
+        }
+        .ubicacion {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .informacion-contacto {
+            flex: 1;
+        }
+        /* Estilos para los iconos de redes sociales */
+        .redes-sociales a {
+            margin-right: 10px;
+        }
+        .redes-sociales img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* Hacemos que los iconos sean redondos */
+            background-color: #ffffff; /* Agregamos un fondo blanco detrás de los iconos */
+            padding: 5px; /* Agregamos un poco de espacio alrededor de los iconos */
+            transition: transform 0.3s ease; /* Añadimos una transición suave al hacer hover */
+        }
+        .redes-sociales img:hover {
+            transform: scale(1.2); /* Hacemos que los iconos se agranden ligeramente al hacer hover */
+        }
+        /* Estilos para el botón de llamada a la acción */
+        .btn-contacto {
+            background-color: #FF5733; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            padding: 10px 20px; /* Espacio interno del botón */
+            border-radius: 5px; /* Bordes redondeados */
+            text-decoration: none; /* Quitamos el subrayado del texto */
+            transition: background-color 0.3s ease; /* Añadimos una transición suave al cambiar el color de fondo */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" onclick="mostrarInicio()">Inicio</a>
+            <a href="#" onclick="mostrarPrendas()">Prendas</a>
+            <a href="#" onclick="mostrarNosotros()">Nosotros</a>
+        </nav>
+        <h1 class="titulo" style="font-size: 3em;font-family: 'Agatha Neo', cursive;">
+            <img src="img/icono.jpg" alt="Icono de PreLoved"> <!-- Icono junto al título -->
+            PreLoved
+        </h1> <!-- Ahora el h1 está centrado -->
+    </header>
+    
+
+    <!-- Contenido -->
+    <div id="contenidoInicio" class="contenido degradado-fondo">
+        <div class="texto">
+            <p>Bienvenido a PreLoved, tu tienda online de ropa de segunda mano. <br>
+                Ofrecemos una amplia selección de prendas de alta calidad a precios increíbles.
+                <br> ¡Explora nuestras ofertas y encuentra tu próximo outfit favorito!</p>
+                <img src="img/descuento.jpg" alt="Descripción de la imagen" class="imagen-pequeña">
+            <img src="img/descuento 2" alt="Descripción de la imagen" class="imagen-pequeña">
+        </div>
+        <div class="carrusel">
+            <div><img src="img/carrusel1.jpg" alt="Imagen 1"></div>
+            <div><img src="img/carrusel2.png" alt="Imagen 2"></div>
+            <div><img src="img/carrusel3.jpeg" alt="Imagen 3"></div>
+        </div>
+    </div>
+
+    <div id="contenidoPrendas" class="landscape degradado-fondo" style="display: none;">
+        <div class="landscape-content">
+            <!-- Contenido para la sección Prendas -->
+            <h2>Prendas</h2>
+            <p>Aquí puedes encontrar nuestras últimas prendas de segunda mano.</p>
+            <img src="img/prendas.jpg" alt="Prendas" style="max-width: 400px;">
+        </div>
+    </div>
+
+    <div id="contenidoNosotros" class="landscape degradado-fondo" style="display: none;">
+        <div class="landscape-content">
+            <!-- Contenido para la sección Nosotros - Ubicación -->
+            <div class="ubicacion">
+                <h2>Ubicación</h2>
+                <div class="ubicacion-mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d955.1526672942726!2d-93.15599486104703!3d16.74626687425023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd9a0655b092f%3A0xd82e41dcd3a0929b!2sLos%20Presidentes%2C%2029059%20Tuxtla%20Guti%C3%A9rrez%2C%20Chis.!5e0!3m2!1ses-419!2smx!4v1696964529503!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <!-- Contenido para la sección Nosotros - Información de contacto -->
+            <div class="informacion-contacto">
+                <div class="contacto">
+                    <h2 style="color: #000000;">Contacto</h2>
+                    <p>Somos una tienda comprometida con ofrecer productos de calidad y un excelente servicio al cliente.</p>
+                    <p>Puedes contactarnos a través de los siguientes medios:</p>
+                    <ul>
+                        <li><strong>Teléfono:</strong> 9611749237</li>
+                        <li><strong>Email:</strong> estrella.abarca97@unach.mx</li>
+                        <span class="redes-sociales"><a href="#"><img src="img/ig.png" alt="Instagram"></a> <a href="#"><img src="img/fb.png" alt="Facebook"></a> <a href="#"><img src="img/tw.png" alt="Twitter"></a></span></li>
+                    </ul>
+                </div>
+                <div class="imagen">
+                    <img src="img/contacto.jpg" alt="Imagen del equipo" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin del contenido -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.carrusel').slick({
+                autoplay: true, // Activamos el autoplay para que el carrusel se mueva automáticamente
+                autoplaySpeed: 2000, // Establecemos la velocidad del autoplay en milisegundos (3000ms = 3 segundos)
+                arrows: false // Desactivamos los botones de "Previous" y "Next"
+            });
+        });
+
+        function mostrarInicio() {
+            document.getElementById('contenidoInicio').style.display = 'flex';
+            document.getElementById('contenidoPrendas').style.display = 'none';
+            document.getElementById('contenidoNosotros').style.display = 'none';
+        }
+
+        function mostrarPrendas() {
+            document.getElementById('contenidoInicio').style.display = 'none';
+            document.getElementById('contenidoPrendas').style.display = 'flex';
+            document.getElementById('contenidoNosotros').style.display = 'none';
+        }
+
+        function mostrarNosotros() {
+            document.getElementById('contenidoInicio').style.display = 'none';
+            document.getElementById('contenidoPrendas').style.display = 'none';
+            document.getElementById('contenidoNosotros').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+
